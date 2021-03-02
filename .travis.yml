@@ -15,6 +15,10 @@ addons:
     sources:
       - deadsnakes
 
+arch:
+  - amd64
+  - ppc64le
+
 install:
   # install maven 3.3.9 if it is not in cache already
   - bash .travis.install-maven.sh "3.3.9" "${HOME}/mvn-home"
