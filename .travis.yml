@@ -33,7 +33,7 @@ before_install:
   - sudo apt install apt-transport-https
   - sudo apt update
   - wget https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod/pool/main/d/dotnet-sdk-3.1/dotnet-sdk-3.1.100-x64.deb
-  - dpkg -i dotnet-sdk-3.1/dotnet-sdk-3.1.100-x64.deb
+  - sudo dpkg -i dotnet-sdk-3.1/dotnet-sdk-3.1.100-x64.deb
 #  - sudo apt install dotnet-sdk-3.1
   - sudo apt install python3.6
   - sudo rm /usr/bin/python3
