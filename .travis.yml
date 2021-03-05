@@ -74,7 +74,7 @@ jobs:
       - "mvn clean install -q -DskipTests -Dci"
       - "travis_wait 60 mvn verify -pl :spark-gremlin -DskipTests -DskipIntegrationTests=false -Dit.test=SparkGryoSerializerGraphComputerProcessIntegrateTest"
       name: "spark - gryo"
-# Power Architecture Support jobs, excluding .NET as it is not supported, excluding spark gryo as it is failing in AMD60
+# Power Architecture Support ppc64le jobs, excluding .NET as it is not supported
     - arch: ppc64le
       stage: "tests"
       script: "mvn clean install -Dci --batch-mode -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
@@ -106,4 +106,8 @@ jobs:
       - "mvn clean install -q -DskipTests -Dci"
       - "travis_wait 60 mvn verify -pl :spark-gremlin -DskipTests -DskipIntegrationTests=false '-Dit.test=*IntegrateTest,!SparkGryoSerializerGraphComputerProcessIntegrateTest'"
       name: "spark - core"
-   
+    - arch: ppc64le
+      script:
+      - "mvn clean install -q -DskipTests -Dci"
+      - "travis_wait 60 mvn verify -pl :spark-gremlin -DskipTests -DskipIntegrationTests=false -Dit.test=SparkGryoSerializerGraphComputerProcessIntegrateTest"
+      name: "spark - gryo"
